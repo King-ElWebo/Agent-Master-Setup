@@ -1,0 +1,30 @@
+{
+  "name": "next-js-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.x.x",
+    "next": "^14.x.x",
+    "react": "^18.x.x",
+    "react-dom": "^18.x.x",
+    "lucide-react": "^0.x.x",
+    "zod": "^3.x.x"
+  },
+  "devDependencies": {
+    "prisma": "^5.x.x",
+    "typescript": "^5.x.x",
+    "@types/node": "^20.x.x",
+    "@types/react": "^18.x.x",
+    "@types/react-dom": "^18.x.x"
+  }
+}
