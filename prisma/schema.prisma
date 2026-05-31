@@ -1,0 +1,64 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Category {
+  id          String           @id @default(cuid())
+  slug        String           @unique
+  name        String
+  description String?
+  items       CollectionItem[]
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+}
+
+model CollectionItem {
+  id          String                @id @default(cuid())
+  slug        String                @unique
+  title       String
+  subtitle    String?
+  description String?
+  price       Float?
+  badge       String?
+  images      CollectionItemImage[]
+  categoryId  String
+  category    Category              @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  createdAt   DateTime              @default(now())
+  updatedAt   DateTime              @updatedAt
+}
+
+model CollectionItemImage {
+  id               String         @id @default(cuid())
+  url              String
+  alt              String?
+  sortOrder        Int            @default(0)
+  isCover          Boolean        @default(false)
+  collectionItemId String
+  collectionItem   CollectionItem @relation(fields: [collectionItemId], references: [id], onDelete: Cascade)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+}
+
+model Faq {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String
+  sortOrder Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

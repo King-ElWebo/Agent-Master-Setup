@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Layout Architecture Repaired",
+  "entry": "layout-inheritance-restored.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-05-28T21:14:03.874Z",
+  "updatedAt": "2026-05-28T21:14:03.898Z",
+  "metadata": {
+    "identifier": "layout-inheritance-restored",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}

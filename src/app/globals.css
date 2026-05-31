@@ -1,0 +1,44 @@
+/* src/app/globals.css */
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@source "../**/*.{ts,tsx}";
+
+@theme {
+  /* High-end monochrome tech theme */
+  --color-brand-950: #0a0a0a;
+  --color-brand-100: #f5f5f4;
+  --color-brand-500: #ffffff;
+  
+  /* Radien nach Emils Philosophie (Haptisch & Weich) */
+  --radius-premium-sm: 8px;
+  --radius-premium-md: 16px;
+  --radius-premium-lg: 24px;
+  
+  /* Animations-Kurven für GSAP / Tailwind */
+  --animate-fluid-in: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html, body {
+  background-color: #f5f5f7;
+  color: #000000;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+
+html.dark, html.dark body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #0e0e11;
+  color: #ffffff;
+}
+
+html.dark ::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
